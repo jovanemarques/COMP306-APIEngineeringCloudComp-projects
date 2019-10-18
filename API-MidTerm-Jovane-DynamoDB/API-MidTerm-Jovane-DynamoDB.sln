@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API-MidTerm-Jovane-DynamoDB", "API-MidTerm-Jovane-DynamoDB\API-MidTerm-Jovane-DynamoDB.csproj", "{D922767E-1590-4147-81AF-F07D98C621AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoDbLibs", "DynamoDbLibs\DynamoDbLibs.csproj", "{42CA4A2A-D8BC-42DA-96D3-75393278B0D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D922767E-1590-4147-81AF-F07D98C621AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D922767E-1590-4147-81AF-F07D98C621AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D922767E-1590-4147-81AF-F07D98C621AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D922767E-1590-4147-81AF-F07D98C621AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42CA4A2A-D8BC-42DA-96D3-75393278B0D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42CA4A2A-D8BC-42DA-96D3-75393278B0D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42CA4A2A-D8BC-42DA-96D3-75393278B0D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42CA4A2A-D8BC-42DA-96D3-75393278B0D1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0823E785-0F2D-4B70-9982-FA9BADCF8F0D}
+	EndGlobalSection
+EndGlobal
