@@ -6,6 +6,5 @@ https://localhost:5001/api/DynamoDb/putitems?id=3&replayDateTime=637777890200000
 
 https://localhost:5001/api/DynamoDb/getitems?id=2
 
-set AWS_ACCESS_KEY_ID="us-east-1"
-set AWS_SECRET_ACCESS_KEY="AKIATOE4T6WYFLMHWK5Z"
-set AWS_REGION="bbAK3wdtqqllmcHFaZTBtqdZY17lQs+KY2vTEzzR"
+https://localhost:5001/api/DynamoDb/putitems?id=1&replayDateTime=630000890200000000&price=30.50
+

@@ -32,7 +32,8 @@ namespace DynamoDbLibs.DynamoDb
             return new Item
             {
                 Id = Convert.ToInt32(result["Id"].N),
-                ReplayDateTime = result["ReplayDateTime"].N
+                ReplayDateTime = result["ReplayDateTime"].N,
+                Price = Convert.ToDouble(result["Price"].N)
             };
         }
 
@@ -62,19 +63,8 @@ namespace DynamoDbLibs.DynamoDb
                     }
                 },
                 FilterExpression = "Id = :v_Id",
-                ProjectionExpression = "Id, ReplayDateTime"
+                ProjectionExpression = "Id, ReplayDateTime, Price"
             };
         }
-    }
-
-    public class DynamoTableItems
-    {
-        public IEnumerable<Item> Items { get; set; }
-    }
-
-    public class Item
-    {
-        public int Id { get; set; }
-        public string ReplayDateTime { get; set; }
     }
 }

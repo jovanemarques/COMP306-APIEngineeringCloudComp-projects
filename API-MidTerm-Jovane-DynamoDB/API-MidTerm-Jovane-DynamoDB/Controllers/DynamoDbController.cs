@@ -15,11 +15,13 @@ namespace API_MidTerm_Jovane_DynamoDB.Controllers
         private readonly IDynamoDbExamples _dynamoDbExamples;
         private readonly IPutItem _putItem;
         private readonly IGetItem _getItem;
-        public DynamoDbController(IDynamoDbExamples dynamoDbExamples, IPutItem putItem, IGetItem getItem)
+        private readonly IUpdateItem _updateItem;
+        public DynamoDbController(IDynamoDbExamples dynamoDbExamples, IPutItem putItem, IGetItem getItem, IUpdateItem updateItem)
         {
             _dynamoDbExamples = dynamoDbExamples;
             _putItem = putItem;
             _getItem = getItem;
+            _updateItem = updateItem;
         }
         [Route("createtable")]
         public IActionResult CreateDynamoDbTable()
@@ -28,9 +30,9 @@ namespace API_MidTerm_Jovane_DynamoDB.Controllers
             return Ok();
         }
         [Route("putitems")]
-        public IActionResult PutItem([FromQuery] int Id, string replayDateTime)
+        public IActionResult PutItem([FromQuery] int Id, string replayDateTime, double price)
         {
-            _putItem.AddNewEntry(Id, replayDateTime);
+            _putItem.AddNewEntry(Id, replayDateTime, price);
             return Ok();
         }
         [Route("getitems")]
@@ -38,6 +40,13 @@ namespace API_MidTerm_Jovane_DynamoDB.Controllers
         {
             var response = await _getItem.GetItems(id);
 
+            return Ok(response);
+        }
+        [HttpPut]
+        [Route("updateitem")]
+        public async Task<IActionResult> UpdateItem([FromQuery] int id, double price)
+        {
+            var response = await _updateItem.Update(id, price);
             return Ok(response);
         }
     }
