@@ -33,7 +33,7 @@ namespace DynamoDbLibs.DynamoDb
             {
                 Id = Convert.ToInt32(result["Id"].N),
                 ReplayDateTime = result["ReplayDateTime"].N,
-                Price = Convert.ToDouble(result["Price"].N)
+                Price = result.Keys.Contains("Price") ? Convert.ToDouble(result["Price"].N) : 0.0
             };
         }
 
