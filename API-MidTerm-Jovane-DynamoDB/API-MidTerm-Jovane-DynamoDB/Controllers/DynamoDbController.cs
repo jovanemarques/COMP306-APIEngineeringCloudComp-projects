@@ -12,16 +12,33 @@ namespace API_MidTerm_Jovane_DynamoDB.Controllers
     [ApiController]
     public class DynamoDbController : ControllerBase
     {
-        private readonly IDynamoDbExamples _dynamoDbExamples; 
-        public DynamoDbController(IDynamoDbExamples dynamoDbExamples)
+        private readonly IDynamoDbExamples _dynamoDbExamples;
+        private readonly IPutItem _putItem;
+        private readonly IGetItem _getItem;
+        public DynamoDbController(IDynamoDbExamples dynamoDbExamples, IPutItem putItem, IGetItem getItem)
         {
             _dynamoDbExamples = dynamoDbExamples;
+            _putItem = putItem;
+            _getItem = getItem;
         }
         [Route("createtable")]
         public IActionResult CreateDynamoDbTable()
         {
             _dynamoDbExamples.CreateDynamoDbTable();
             return Ok();
+        }
+        [Route("putitems")]
+        public IActionResult PutItem([FromQuery] int Id, string replayDateTime)
+        {
+            _putItem.AddNewEntry(Id, replayDateTime);
+            return Ok();
+        }
+        [Route("getitems")]
+        public async Task<IActionResult> GetItems([FromQuery] int? id)
+        {
+            var response = await _getItem.GetItems(id);
+
+            return Ok(response);
         }
     }
 }

@@ -37,6 +37,8 @@ namespace API_MidTerm_Jovane_DynamoDB
             services.AddAWSService<IAmazonDynamoDB>();
 
             services.AddSingleton<IDynamoDbExamples, DynamoDbExamples>();
+            services.AddSingleton<IPutItem, PutItem>();
+            services.AddSingleton<IGetItem, GetItem>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
