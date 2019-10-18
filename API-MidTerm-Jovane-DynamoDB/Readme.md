@@ -1,3 +1,5 @@
+API-MidTerm-Jovane-DynamoDB: Videos:
+
 Part 1 - https://youtu.be/o3dZCM9i0Ss  looked at creating an ASP.NET Core 2.0 Web API, then create a DynamoDB Table and install the relevant AWS NuGet packages that will allow us to create a DynamoDB client.
 
 Part 2 - https://youtu.be/FNUBBsmV6Co looked at putting items onto our DynamoDB table
